@@ -1,0 +1,130 @@
+{% extends 'registration/base/base.html' %}
+{% load static %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block stylefiles %}
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="{% static 'registration/styles/style.css' %}">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="signin-signup">
+        <form action="" class="sign-in-form">
+            {% csrf_token %}
+            <h2 class="title">Sign in</h2>
+           <div class="input-field">
+            <i class="fas fa-user"></i>
+          
+               {{  signin_form.as_p}}
+         
+           </div>
+            <input type="submit" value="Login" class="btn">
+            <p class="social-text">Or sign with social platform</p>
+            <div class="social-media">
+                <a href="#" class="social-icon">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="social-icon">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+            <p class="account-text">Don't have an account? <a href="#" id="sign-up-btn2">Sign up</a></p>
+        </form>
+
+        <form action="" class="sign-up-form">
+            <h2 class="title">Sign up</h2>
+            
+             <span>
+                <div class="input-field">
+                         <i class="fas fa-user"></i>
+                         <input type="text" placeholder="First name">
+                </div>
+                <div class="input-field">
+                   <i class="fas fa-user"></i>
+                   <input type="text" placeholder="Last name">
+                </div>
+
+
+                <div class="input-field">
+                    <i class="fas fa-address-book"></i>
+                    <input type="tel" placeholder="Phone number">
+                </div> 
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                   <!--  <p>Date of birth  </p>-->
+                    <input type="date" value="birth_date">
+                </div> 
+             </span>
+            <input type="submit" value="Next" class="btn">
+ 
+            <p class="social-text">Or sign with social platform</p>
+            <div class="social-media">
+                <a href="#" class="social-icon">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="social-icon">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+            <p class="account-text">Already have an account? <a href="#" id="sign-in-btn2">Sign in</a></p>
+        </form>
+    </div>
+    <div class="panel-container">
+        <div class="panel left-panel">
+            <div class="content">
+                <h3>Member of Brand?</h3>
+                <p>Sign in today and use FundiChapChap to get more latest services. Your most Welcome Dear Customer.</p>
+                <button class="btn" id="sign-in-btn">Sign in</button>
+            </div>
+            <img src="{% static 'registration/images/pic3.png' %}" alt="" class="image">
+        </div>
+
+        <div class="panel right-panel">
+            <div class="content">
+                <h3>New to Brand?</h3>
+                <p>Sign up today and use fundiChapChap to get more latest services. Your most Welcome Dear Customer.</p>
+                <button class="btn" id="sign-up-btn">Sign up</button>
+            </div>
+            <img src="{% static 'registration/images/pic2.png' %}" alt="" class="image">
+        </div>
+    </div>
+</div>
+<script src="{% static 'registration/scripts/app.js' %}"></script>
+{% endblock %}
+
+  
+
+
+<!--
+    LOGIN FORM
+    <div class="input-field">
+    <i class="fas fa-user"></i>
+    <input type="text" placeholder="Username">
+</div>
+
+<div class="input-field">
+    <i class="fas fa-lock"></i>
+    <input type="password" placeholder="password">
+</div> 
+-->
+
+<!--
+    SIGNUP FORM
+         
+-->

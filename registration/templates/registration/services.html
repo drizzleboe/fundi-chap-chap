@@ -1,0 +1,33 @@
+{% extends 'registration/base/base.html' %}
+{% load static %}
+
+
+<body>Here is a page which displays the service of the _
+
+    {%  block title %}services file{% endblock %}
+    {% block stylefiles %}<link rel="stylesheet" href="{% static 'registration/styles/index.css' %}">
+    {% endblock %}
+
+   {% block body %}
+   {% if available %}
+
+   <p style="background-color: red; color: aliceblue;">{{ user.fname }} {{user.lname}}</p>
+   <p>
+    <img src="{{ user.image.url }}" alt="image" width="700px" height="300px" fit-content="">
+   </p>
+   <p style="background-color: red; color:aliceblue">{{ user.location.location }}</p>
+   <p style="background-color: red; color:aliceblue">{{ user.age }}</p>
+   <p style="background-color: red; color:aliceblue"> this use registered on  {{ user.time }}  {{ user.date }} </p>
+   
+   {% else %}
+   <p>Sorry the page is unavailable right now</p>
+   {% endif %}
+
+   {% if user.location.location != 'Lemara'%}
+    <p>code executed succesfully</p>
+    {% else %}
+    <p>This is code I actually want </p>
+   {% endif %}
+ 
+   {% endblock %}
+ 

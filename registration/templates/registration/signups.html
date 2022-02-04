@@ -1,0 +1,50 @@
+{% extends 'registration/base/base.html' %}
+{% load static %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block stylefiles %}
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="{% static 'registration/styles/style.css' %}">
+{% endblock %}
+
+{% block body %}
+<span>
+  <form>
+      {% csrf_token %}
+      <span>
+        <h2>Where we can find you</h2> 
+         <label><p>{{ location.as_p }}</p></label></h2>
+    </span>
+    <br>
+    <br>
+     <span>
+         <h2>Are you specialist?</h2>
+         <h3>Which professional you have</h3>
+         <label>Choose a professonal here or write yours
+             <p> {{ service.as_p }}</p>
+         </label>
+     </span>
+     <br>
+     <br>
+     <span>
+         <h2>Please upload your photo so that you will be seen by customers</h2>
+         <label>We recommend it to be a passport
+             <p>{{ image.as_p }}</p>
+         </label>
+ 
+     </span>
+     <br>
+     <br>
+
+     <span>
+         <input type="submit" value="complete" name="submit">
+     </span>
+  </form>
+</span>
+
+{%  endblock %}
+
+  
