@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import user,region
-from .form import signups,sign_in,location,image
+from .form import sign_in,location,image,prfssn
 
 # Create your views here.
 def index(request):
@@ -14,36 +14,29 @@ def index(request):
         'region':_region
     })
 def services(request, fundi_services):
-    try:
-        details = users.objects.get(slug = fundi_services)
-        return render(request, 'registration/services.html',{
-        'available':True,
-        'user':details      
-        })
-    except:
-        return render(request, 'registration/services.html',{
-        'available':False
-        })
-        print('here is a problem')
+    details = user.objects.get(slug = fundi_services)
+    return render(request, 'registration/services.html',{
+    'available':True,
+    'user':details      
+    })
+    
 
 def signup(request):
-    client=users.objects.all()
-    form=signups()
+    client=user.objects.all()
     loc=location()
-    ser=service()
+    ser=prfssn()
     img=image()
     return render(request, 'registration/signups.html',{
         'client':client,
-        'form':form,
         'location':loc,
         'service':ser,
         'image':img
     })
 def userlist(request):
-    user  = users.objects.all()
-    addre = address.objects.all()
+    user_  = user.objects.all()
+    addre = region.objects.all()
     return render(request, 'registration/userlist.html',{
-        'users':user,
+        'users':user_,
         'addre':addre
     })
 def login(request):
