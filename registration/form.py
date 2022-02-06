@@ -1,5 +1,5 @@
 from django import forms
-from .models import users
+from .models import user
 import datetime
 
 #create your form here
@@ -15,15 +15,15 @@ class signups(forms.Form):
 
 class location(forms.ModelForm):    
     class Meta:
-        model=users
+        model=user
         fields=['location']
 
-class service(forms.ModelForm):    
-    class Meta:
-        model=users
-        fields=['profession']
+#class service(forms.ModelForm):    
+ #   class Meta:
+  #      model=users
+   #     fields=['prfssn']
 
 class image(forms.ModelForm):    
     class Meta:
-        model=users
+        model=user
         fields=['image']

@@ -5,11 +5,8 @@
     {% block stylefiles %}<link rel="stylesheet" href="{% static 'registration/styles/index.css' %}">
     {% endblock %}
 
-
-{% block body %}
-<div id="foo">
-
- <form>
+{% block header %}
+<form>
   <select> 
     {% for i in region %}
     <option value="{{ i.location }}">{{i.location}}</option>
@@ -17,11 +14,16 @@
     
   </select>
  </form>
- <p><a href="{% url 'login' %}">My account</p>
-    <h1>Chagua fundi hapa chini kwa msaada wa haraka na nafuu</h1>
+ <p><a href="{% url 'login' %}">My account</a></p>
+{% endblock %}
+
+{% block body %}
+<div id="foo">
+    <h1>Choose an expert here for cheap and faster solution </h1>
     {% if register %}
       {% for user in users %}
-      {% include 'registration/frequent/frequent.html' with fname=user.fname lname=user.lname image=user.image.url phone_no=user.phone_no age=user.age slug=user.slug%}
+      {{ user.prfssn }}
+      {% include 'registration/frequent/frequent.html' with fname=user.fname lname=user.lname prfssn=user.prfssn.name image=user.image.url phone_no=user.phone_no age=user.age slug=user.slug%}
       {% endfor %}
     {% endif %}
 </div>

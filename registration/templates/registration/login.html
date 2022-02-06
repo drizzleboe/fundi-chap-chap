@@ -14,12 +14,12 @@
 <div class="container">
     <div class="signin-signup">
         <form action="" class="sign-in-form">
-            {% csrf_token %}
+                {% csrf_token %}
             <h2 class="title">Sign in</h2>
            <div class="input-field">
             <i class="fas fa-user"></i>
           
-               {{  signin_form.as_p}}
+               {{  signin_form.as_p }}
          
            </div>
             <input type="submit" value="Login" class="btn">
@@ -65,6 +65,7 @@
                     <input type="date" value="birth_date">
                 </div> 
              </span>
+            
             <input type="submit" value="Next" class="btn">
  
             <p class="social-text">Or sign with social platform</p>
